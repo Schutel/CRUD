@@ -8,6 +8,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		int cont = 0;
+		Produto p = new Produto();
+
 		int id = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("    Seja Bem vindo a nosso Sistema");
@@ -16,7 +18,7 @@ public class Main {
 		ArrayList<Produto> produtos = new ArrayList<Produto>();
 
 		for (int i = 0; i < tamanho; i++) {
-			Produto p = new Produto();
+			p = new Produto();
 			p.Info();
 			p.setId(id++);
 			produtos.add(p);
@@ -47,7 +49,7 @@ public class Main {
 				System.out.println("[2] Mais de um");
 				int re = sc.nextInt();
 				if (re == 1) {
-					Produto p = new Produto();
+					p = new Produto();
 					p.setId(id++);
 					p.Info();
 					produtos.add(p);
@@ -56,7 +58,7 @@ public class Main {
 					System.out.println("quantos quer adicionar");
 					int add = sc.nextInt();
 					for (int i = 0; i < add; i++) {
-						Produto p = new Produto();
+						p = new Produto();
 						p.setId(id++);
 						p.Info();
 						produtos.add(p);
@@ -77,7 +79,7 @@ public class Main {
 				System.out.println("Selecione o Id do produto que deseja editar");
 				int ides = sc.nextInt();
 				System.out.println();
-				
+
 				for (Produto produto : produtos) {
 					if (ides == produto.getId()) {
 						produto.Info();
@@ -88,18 +90,14 @@ public class Main {
 				break;
 
 			case 4:
-				Produto p = new Produto();
 				System.out.println("Tem certeza (sim/não)");
 				String rep = sc.next().toLowerCase();
 				if (rep.equals("sim")) {
 					System.out.println("Selecione o Id do produto que deseja remover");
 					int ide = sc.nextInt();
-					p = new Produto();
 					if (ide == p.getId()) {
 						produtos.remove(p.getId());
 					}
-				} else {
-					System.out.println("------------");
 				}
 
 				break;
