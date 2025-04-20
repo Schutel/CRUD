@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-import org.w3c.dom.ls.LSOutput;
 
 public class Main {
 
@@ -141,8 +140,8 @@ public class Main {
 						for (Produto produto : produtos) {
 							if (ides == produto.getId()) {
 								produto.getPreco();
-								produto.setPreco(produto.preco - (produto.preco * des / 100));
-								if (produto.preco < 0) {
+								produto.setPreco(produto.getPreco() - (produto.getPreco() * des / 100));
+								if (produto.getPreco() < 0) {
 									System.out.println("O valor do produto não pode ser menor que 0, Tente Novamente");
 									rp = 0;
 									System.out.println();
@@ -164,7 +163,7 @@ public class Main {
 					for (Produto produto : produtos) {
 						if (ides == produto.getId()) {
 							produto.getPreco();
-							produto.setPreco(produto.preco + (produto.preco * des / 100));
+							produto.setPreco(produto.getPreco() + (produto.getPreco() * des / 100));
 							System.out.println("O novo valor foi atribuido basta visualizar");
 						}
 						cont = 0;
@@ -179,8 +178,8 @@ public class Main {
 						if (ides == produto.getId()) {
 							System.out.println("Quanto você deseja Diminuir ");
 							des = sc.nextDouble();
-							produto.setPreco(produto.preco - des);
-							if (produto.preco < 0) {
+							produto.setPreco(produto.getPreco() - des);
+							if (produto.getPreco() < 0) {
 								System.out.println("O valor do produto não pode ser menor que 0, Tente Novamente");
 								rp = 0;
 								System.out.println();
@@ -200,7 +199,7 @@ public class Main {
 						if (ides == produto.getId()) {
 							System.out.println("Quanto você deseja Diminuir ");
 							des = sc.nextDouble();
-							produto.setPreco(des + produto.preco);
+							produto.setPreco(des + produto.getPreco());
 							System.out.println("O novo valor foi atribuido basta visualizar");
 
 						}
