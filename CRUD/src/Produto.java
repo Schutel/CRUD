@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Produto {
 	Scanner sc = new Scanner(System.in);
 
-	public int id;
-	public String nome;
-	public String quantidade;
-	public String validade;
-	public Double preco;
+	private int id;
+	private String nome;
+	private String quantidade;
+	private String validade;
+	private Double preco;
 
 	public Produto() {
 		
@@ -59,6 +59,16 @@ public class Produto {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
 	}
 
 	@Override
