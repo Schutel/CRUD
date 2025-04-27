@@ -44,17 +44,8 @@ public class Main {
 			switch (resp) {
 
 			case 1:
-				System.out.println("quer adicionar um ou mais de um produto");
-				System.out.println("[1] Um");
-				System.out.println("[2] Mais de um");
-				int re = sc.nextInt();
+				int re = 1;
 				if (re == 1) {
-					p = new Produto();
-					p.setId(id++);
-					p.Info();
-					produtos.add(p);
-
-				} else {
 					System.out.println("quantos quer adicionar");
 					int add = sc.nextInt();
 					for (int i = 0; i < add; i++) {
@@ -63,6 +54,7 @@ public class Main {
 						p.Info();
 						produtos.add(p);
 						System.out.println("-----------------------");
+
 					}
 				}
 				break;
@@ -258,6 +250,7 @@ public class Main {
 		}
 
 		System.out.println("obrigado por usar o nosso sistema.");
+		sc.close();
 	}
 
 }
